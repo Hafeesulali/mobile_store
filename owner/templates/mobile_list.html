@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+{%block body_block%}
+<div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <table class="table">
+                <tr>
+                    <th>Mobile Name</th>
+                    <th>Mobile Brand</th>
+                    <th>Price</th>
+                    <th>Number of pieces</th>
+                </tr>
+                {%for mobile in mobiles%}
+                <tr>
+
+                    <td>{{mobile.mobile_name}}</td>
+                    <td>{{mobile.mobile_brand}}</td>
+                    <td>{{mobile.price}}</td>
+                    <td>{{mobile.number_of_pieces}}</td>
+                    <td>
+                        <a href="{%url 'change mobile' mobile.id%}" class="btn btn-warning">edit</a>
+                        <a href="{%url 'mobile details' mobile.id%}" class="btn btn-primary">view</a>
+                        <a href="{%url 'delete mobile' mobile.id%}" class="btn btn-danger">Delete</a>
+
+                    </td>
+                    {%endfor%}
+                </tr>
+            </table>
+        </div>
+        <div class="col-2"></div>
+    </div>
+{%endblock%}

@@ -1,0 +1,13 @@
+{%extends 'cbase.html'%}
+{%block body_block%}
+<div class="row">
+    {%for cart in carts%}
+    <div class="col-4 mt-3">
+        {{cart}}
+
+
+
+    </div>
+    {%endfor%}
+</div>
+{%endblock%}
